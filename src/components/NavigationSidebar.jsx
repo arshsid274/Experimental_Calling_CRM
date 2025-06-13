@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function NavigationSidebar() {
-  const [activeTab, setActiveTab] = useState("messages");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname === "/" ? "/messages" : location.pathname;
 
   const handleTabClick = (tab) => {
-    setActiveTab(tab);
+    navigate(`/${tab}`);
   };
 
   return (
@@ -25,7 +27,7 @@ function NavigationSidebar() {
       <div className="flex flex-col items-center space-y-6 flex-1">
         <NavItem
           id="messages"
-          isActive={activeTab === "messages"}
+          isActive={currentPath === "/messages"}
           onClick={() => handleTabClick("messages")}
           icon={
             <svg
@@ -45,7 +47,7 @@ function NavigationSidebar() {
         />
         <NavItem
           id="calls"
-          isActive={activeTab === "calls"}
+          isActive={currentPath === "/calls"}
           onClick={() => handleTabClick("calls")}
           icon={
             <svg
@@ -64,7 +66,7 @@ function NavigationSidebar() {
         />
         <NavItem
           id="notes"
-          isActive={activeTab === "notes"}
+          isActive={currentPath === "/notes"}
           onClick={() => handleTabClick("notes")}
           icon={
             <svg
@@ -87,7 +89,7 @@ function NavigationSidebar() {
         />
         <NavItem
           id="analytics"
-          isActive={activeTab === "analytics"}
+          isActive={currentPath === "/analytics"}
           onClick={() => handleTabClick("analytics")}
           icon={
             <svg
@@ -108,7 +110,7 @@ function NavigationSidebar() {
         />
         <NavItem
           id="settings"
-          isActive={activeTab === "settings"}
+          isActive={currentPath === "/settings"}
           onClick={() => handleTabClick("settings")}
           icon={
             <svg
