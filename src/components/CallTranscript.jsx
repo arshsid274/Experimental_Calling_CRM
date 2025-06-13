@@ -1,5 +1,5 @@
 import { Search, ChevronLeft, ChevronRight, Mic, Clock, PhoneCall } from "lucide-react"
-import Image from "next/image"
+import Image from "../assets/download.png"
 
 export default function CallHistory() {
   return (
@@ -137,13 +137,13 @@ export default function CallHistory() {
           <div className="flex items-center">
             <span className="text-gray-600 mr-2">Welcome! John Bravo</span>
             <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-              <Image
+              {/* <Image
                 src="/placeholder.svg?height=32&width=32"
                 alt="Profile"
                 width={32}
                 height={32}
                 className="object-cover"
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -153,13 +153,13 @@ export default function CallHistory() {
           <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-between">
             <div className="flex items-center">
               <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
-                <Image
+                {/* <Image
                   src="/placeholder.svg?height=48&width=48"
                   alt="Contact"
                   width={48}
                   height={48}
                   className="object-cover"
-                />
+                /> */}
               </div>
               <div>
                 <h2 className="text-xl font-bold text-blue-800">(319) 555-0115</h2>
